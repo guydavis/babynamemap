@@ -1,0 +1,82 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<script type="text/javascript">
+Ext.onReady(function() {
+    var reader = new Ext.data.JsonReader({root: 'Names', totalProperty: 'Total', id: 'id'}, 
+      [
+          {name: 'name', mapping: 'name'},
+          {name: 'rating_avg', mapping: 'rating_avg'},
+          {name: 'id', mapping: 'id'}
+      ]);
+    var conn =  new Ext.data.Connection({url: '/name/browse_data',
+      extraParams: { gender:'<%=@gender%>', letter:'<%=@letter%>'}});
+    var proxy = new Ext.data.HttpProxy(conn);
+    var store = new Ext.data.Store({proxy: proxy, reader: reader, remoteSort: true})
+
+    <%=render :partial=>"grid_renderers" %>
+    
+    var cm = new Ext.grid.ColumnModel([
+      { id: 'name', header: "Name", dataIndex: 'name', sortable:true, width:200, fixed: false, 
+        resizable: true, renderer: renderName},
+      { header: "Rating", dataIndex: 'rating_avg', width:110, sortable: true, fixed: false, 
+        resizable: false, renderer: renderRating},  
+      { header: "View", dataIndex: 'id', width:110, sortable:false, resizable: false, renderer: renderViews},
+      { header: "Actions", dataIndex: 'id', width:110, sortable:false, resizable: false, renderer: renderActions}
+    ]);
+        
+    cm.defaultSortable = true;
+      
+    var grid = new Ext.grid.GridPanel({
+        el: 'names_grid',
+        store: store,
+        cm: cm,
+        selModel: new Ext.grid.RowSelectionModel({singleSelect:true}), 
+        autoExpandColumn: 'name',
+        trackMouseOver: true,
+        autoHeight: true,
+	      autoWidth: true,
+	      loadMask: {msg: 'Loading Names...'},
+	      bbar: new Ext.PagingToolbar({
+          pageSize: 20,
+          store: store,
+          displayInfo: true,
+          displayMsg: 'Displaying Names {0} - {1} of {2}',
+          emptyMsg: "No Names to display"
+        })
+    });
+    
+    grid.render();            
+    store.load({params:{start:0, limit:20}});
+});
+</script>
+
+<div style="font-size:.9em;font-weight:bold;margin-top:5px;">
+View by Letter: &nbsp;
+<%= 
+  ('A'..'Z').collect{|x| link_to( x, {:gender=>@gender.downcase, :letter=>x}, :rel=>'nofollow')}.join('&nbsp; ')%> &nbsp;or
+<% if (@gender.downcase == 'male')
+     other_gender = 'female'
+   else
+     other_gender = 'male'
+   end
+%>
+<%= link_to("All " + boy_or_girl(@gender) + "s",{:gender=>@gender.downcase}) %> or 
+<%= link_to("All " + boy_or_girl(other_gender) + "s",{:gender=>other_gender.downcase}) %>
+</div>
+
+<div id="names_grid" style="width:98%;text-align:center;border:3px solid #99bbe8; overflow:hidden;"></div>

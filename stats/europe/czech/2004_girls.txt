@@ -1,0 +1,11 @@
+Jana	520
+Petra	354
+Lenka	329
+Martina	280
+Kateřina	273
+Lucie	229
+Hana	218
+Monika	218
+Eva	206
+Jitka	186
+

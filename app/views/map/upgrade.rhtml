@@ -1,0 +1,42 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+<html>
+<head><title>Unsupported Browser</title></head>
+<body>
+
+<table border='0' cellpadding='5' cellspacing='10'>
+<tr><td colspan='2' valign='bottom' align='middle'><%=image_tag("baby_laughing.jpg")%><br/><h3>Please Upgrade Your Browser</h2></td>
+<td rowspan='3'>
+<p>Oops!  Your web browser is <b>out of date</b> and must be upgraded before you can access this<br /> site.  Please select from any of the <b>free</b> upgrade options listed on the left.  Upon upgrading,<br /> you'll be able to access the full functionality of this site as shown below.</p>
+<%= image_tag "browsers/ie7_sshot.jpg" %></td></tr>
+<tr>
+<td valign='bottom' align="center"><a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=38102&amp;t=67"><img border="0" alt="Firefox 3" title="Firefox 3 for Windows, Macintosh, and Linux" src="/images/browsers/firefox.png" style="margin-bottom:10px"/></a><br/>(Best Choice)</td>	
+<td valign='bottom'><%= link_to image_tag("browsers/ie7.jpg", :style=>"border:0"), "http://www.microsoft.com/windows/downloads/ie/getitnow.mspx", :title=>'Windows Internet Explorer 7'%></td>
+
+<tr><td><%= link_to image_tag("browsers/safari.png", :style=>"border:0"), "http://www.apple.com/safari/download/", :title=>'Apple Safari for Windows and Macintosh'%></td>
+<td><%= link_to image_tag("browsers/opera.jpg", :style=>"border:0"), "http://www.opera.com/download/", :title=>'Opera for Windows, Macintosh, and Linux'%></td></tr>
+</table>
+<% if ENV['RAILS_ENV'] == 'production' %>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2596560-1";
+urchinTracker();
+</script>
+<% end %>
+</body>
+</html>

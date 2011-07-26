@@ -1,0 +1,61 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div style="margin:10px;">
+
+  <span id='faq_header'>Copyright on Photos and Comments</span>
+  <br />
+  <p id='faq_item'>
+    All photos and comments posted by visitors to this site are subject to the 
+    terms of the <%=link_to "Creative Commons Public Domain license", 
+    "http://creativecommons.org/licenses/publicdomain/", :target=>'blank'%>.
+  </p>
+  
+  <span id='faq_header'>Copyright on Graphics</span>
+  <br />
+  <p id='faq_item'>Copyright on the graphics, icons, and logos used on this site
+  are that of the respective owner of the image.  In particular, the icons are used
+  freely courtesy of <%=link_to "FamFamFam", "http://www.famfamfam.com/lab/icons/silk/"%>.
+  The baby and globe images were purchased for display from their owners on 
+  <%=link_to "iStockPhoto", "http://www.istockphoto.com"%>.
+  </p>
+  
+  <span id='faq_header'>Copyright on Google Maps</span>
+  <br />
+  <p id='faq_item'>The mapping technology and map tiles are the copyright of
+  Google.
+  </p> 
+
+  <span id='faq_header'>Copyright on Statistical Data</span>
+  <br />
+  <p id='faq_item'>Some of the popular name statistics (name and count per year) on this web site
+  are in the public domain.  For example, the US data is offered under this 
+  <a href="http://www.ssa.gov/websitepolicies.htm">US Social Security Administration policy</a>.
+  In other cases, the copyright is reserved by the government statistics office.  For example, I have
+  agreed to the <a href="http://www.statistics.gov.uk/copyright.asp">Click Use Agreement</a> for access 
+  data in England and Wales.  To see the source of a region's statistics, click the 
+  <%image_tag "icons/book.png"%> icon where shown or view the link at the bottom of the 
+  tables showing statistics.</p>
+
+  <span id='faq_header'>Copyright on the Web Site (Open-Source)</span>
+  <br />
+  <p id='faq_item'>Excluding the items copyright above, the remainder of 
+  this web site is copyright by 
+  <%= link_to("Guy Davis", "http://www.guydavis.ca", :target=>'blank') %>, the
+  original creator and developer.  This includes all the source code which is licensed under the <%=link_to "GNU GPL V3", "http://www.gnu.org/copyleft/gpl.html", :target=>'_blank' %> license and is available as a free <a href="/code.tar.gz">download</a>.</p> 
+  
+</div>  

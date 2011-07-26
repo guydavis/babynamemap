@@ -1,0 +1,863 @@
+                                                            74  MEGAN      89
+                                       41  TIFFANY    164
+   1    EMILY          583
+                                                             75  BIANCA     88
+                                       42  SABRINA    163
+   2    ASHLEY         539
+                                                             75  JENNA      88
+                                       43  CHAYA      162
+   3    KAYLA          502
+                                                             75  NATALIA    88
+                                       44  SOFIA      160
+   4    SARAH          445
+                                                             76  GENESIS    87
+                                       45  GABRIELA   156
+   5    SAMANTHA       434
+                                                             77  EMELY      86
+                                       45  KELLY      156
+   6    BRIANNA        399
+                                                             78  IMANI      83
+                                       46  ARIANNA    153
+   7    ISABELLA       383
+                                                             79  AMELIA     81
+                                       46  CHRISTINA  153
+   8    NICOLE         371
+                                                             79  ANDREA     81
+                                       47  AMY        149
+   9    RACHEL         359
+                                                             79  CHARLOTTE  81
+                                       48  ANGELINA   147
+  10    JESSICA        345
+                                                             79  JORDAN     81
+                                       49  ALEXA      146
+  11    MICHELLE       331
+                                                             80  ISABELLE   79
+                                       50  MIRIAM     144
+  11    OLIVIA         331
+                                                             80  LIZBETH    79
+                                       51  JADE       142
+  12    JULIA          311
+                                                             80  RIVKA      79
+                                       52  CATHERINE  141
+  13    SOPHIA         305
+                                                             81  ALLISON    78
+                                       53  KAITLYN    138
+  14    VICTORIA       302
+                                                             81  CINDY      78
+                                       54  BRIANA     137
+  15    AMANDA         299
+                                                             81  NIA        78
+                                       54  SYDNEY     137
+  16    ELIZABETH      293
+                                                             82  MADELINE   77
+                                       55  AALIYAH    135
+  17    ALYSSA         269
+                                                             83  FRANCESCA  76
+                                       55  CHELSEA    135
+  18    EMMA           263
+                                                             83  LILY       76
+                                       56  KAREN      134
+  19    JENNIFER       256
+                                                             84  AMAYA      75
+                                       57  CHLOE      133
+  20    ALEXANDRA      250
+                                                             84  JOCELYN    75
+                                       57  DIANA      133
+  21    STEPHANIE      245
+                                                             84  TATIANA    75
+                                       58  VANESSA    131
+  22    MIA            238
+                                                             85  NAOMI      74
+                                       59  DANIELLE   130
+  23    DESTINY        235
+                                                             86  ANA        72
+                                       59  GABRIELLE  130
+  24    ABIGAIL        221
+                                                             86  JENNY      72
+                                       60  MELISSA    128
+  25    MADISON        218
+                                                             86  MARIAM     72
+                                       61  KIARA      123
+  26    KATHERINE      215
+                                                             86  SHANIA     72
+                                       61  LESLIE     123
+  27    LEAH           209
+                                                             87  DAISY      71
+                                       62  DANIELA    120
+  28    JADA           206
+                                                             87  FATIMA     71
+                                       63  TAYLOR     112
+  29    ESTHER         202
+                                                             87  LAILA      71
+                                       64  ZOE        111
+  30    MAYA           201
+                                                             88  ALICIA     69
+                                       65  CAROLINE   110
+  31    GRACE          200
+                                                             89  ERICA      68
+                                       65  HAILEY     110
+  31    SARA           200
+                                                             89  NINA       68
+                                       65  ISABEL     110
+  32    GABRIELLA      197
+                                                             89  TRINITY    68
+                                       66  ANGELA     109
+  33    JASMINE        196
+                                                             90  JAMIE      67
+                                       66  CHANA      109
+  34    MELANIE        187
+                                                             90  LAURA      67
+                                       67  JACQUELINE 107
+  35    ANNA           185
+                                                             91  MARY       65
+                                       67  MYA        107
+  36    NATALIE        180
+                                                             92  CYNTHIA    64
+                                       68  CRYSTAL    106
+  37    KIMBERLY       179
+                                                             92  SASHA      64
+                                       69  ANGELICA   102
+  38    MARIA          174
+                                                             92  VERONICA   64
+                                       70  SOPHIE     100
+  39    ARIANA         170
+                                                             93  WENDY      63
+                                       71  ADRIANA     95
+  39    REBECCA        170
+                                                             94  BRITNEY    62
+                                       71  AMBER       95
+  40    ALEXIS         167
+                                                             94  ERIN       62
+                                       71  DANIELLA    95
+  40    LAUREN         167
+                                                             94  KATELYN    62
+                                       72  EVELYN      92
+  41    AVA            164
+                                                             95  JULIANA    61
+                                       73  FAITH       91
+  41    GIANNA         164
+                                                             96  DIAMOND    60
+                                       74  ELLA        89
+  41    HANNAH         164
+                                  119 GUADALUPE  37
+                 111 JOANNA    45
+ 97 BREANNA   59
+                                  119 KRYSTAL    37
+                 111 LISA      45
+ 97 JASMIN    59
+                                  119 MONICA     37
+                 111 MALKY     45
+ 97 JULIANNA  59
+                                  119 SUSAN      37
+                 111 STELLA    45
+ 98 KATE      58
+                                  120 CHAVA      36
+                 112 CASSANDRA 44
+ 98 LUCY      58
+                                  120 TOBY       36
+                 112 DINA      44
+ 98 TINA      58
+                                  121 ALISON     35
+                 112 EVA       44
+ 99 CLAIRE    57
+                                  121 KRISTINA   35
+                 112 JOSEPHINE 44
+100 CAITLIN   56
+                                  121 MICHAELA   35
+                 112 NATASHA   44
+100 KAYLEE    56
+                                  121 NEVAEH     35
+                 113 ALISHA    43
+101 ANASTASIA 55
+                                  121 PATRICIA   35
+                 113 ANIYA     43
+101 ANNIE     55
+                                  121 RAQUEL     35
+                 113 KIANA     43
+101 JILLIAN   55
+                                  121 RUTH       35
+                 113 MELODY    43
+101 KYLA      55
+                                  121 VALERIA    35
+                 113 MIRANDA   43
+101 SHARON    55
+                                  122 DYLAN      34
+                 113 SIERRA    43
+102 AUDREY    54
+                                  122 GINA       34
+                 114 ANAYA     42
+102 LAYLA     54
+                                  122 IVY        34
+                 114 BRENDA    42
+102 MARIAH    54
+                                  122 JAYDA      34
+                 114 CIARA     42
+102 VALENTINA 54
+                                  122 JORDYN     34
+                 114 CLAUDIA   42
+103 CAMILA    53
+                                  122 LILLIAN    34
+                 114 DEVORAH   42
+104 ALIYAH    52
+                                  122 MADELEINE  34
+                 114 ELIANA    42
+104 ANGIE     52
+                                  122 MIKAYLA    34
+                 114 GISELLE   42
+104 JAYLENE   52
+                                  122 NATHALIE   34
+                 114 HEAVEN    42
+104 TAMIA     52
+                                  122 PAMELA     34
+                 114 JAZMIN    42
+104 VIVIAN    52
+                                  122 SANDRA     34
+                 114 KATIE     42
+105 FAIGY     51
+                                  122 SKYE       34
+                 114 KRISTEN   42
+105 KARINA    51
+                                  123 BRIDGET    33
+                 115 ANIYAH    41
+105 MARGARET  51
+                                  123 BRITTANY   33
+                 115 ASHANTI   41
+105 SERENA    51
+                                  123 JUSTINE    33
+                 115 AYANNA    41
+106 CHRISTINE 50
+                                  123 KAYLAH     33
+                 115 ERIKA     41
+106 MALKA     50
+                                  123 LUCIA      33
+                 115 FIONA     41
+106 MOLLY     50
+                                  123 PEARL      33
+                 115 HELEN     41
+106 SAVANNAH  50
+                                  123 STACEY     33
+                 116 COURTNEY  40
+106 TALIA     50
+                                  123 TIANA      33
+                 116 LESLY     40
+106 VALERIE   50
+                                  123 TRACY      33
+                 116 LILA      40
+107 ALICE     49
+                                  124 ALEXANDRIA 32
+                 116 NANCY     40
+107 DENISE    49
+                                  124 JESSIE     32
+                 116 PAIGE     40
+107 NADIA     49
+                                  124 KATHRYN    32
+                 117 ARIELLE   39
+108 ARIEL     48
+                                  124 PRECIOUS   32
+                 117 KYLIE     39
+108 DANA      48
+                                  124 SHAYLA     32
+                 117 MAGGIE    39
+108 GITTY     48
+                                  124 TIARA      32
+                 117 MELANY    39
+108 JOYCE     48
+                                  125 AISHA      31
+                 117 SHIRLEY   39
+108 RUBY      48
+                                  125 BRYANNA    31
+                 118 CAMILLE   38
+109 ALANA     47
+                                  125 CASEY      31
+                 118 CAROLINA  38
+109 ANGEL     47
+                                  125 CHEYENNE   31
+                 118 JULIE     38
+109 LEILA     47
+                                  125 DEBORAH    31
+                 118 KARLA     38
+109 MAKAYLA   47
+                                  125 EILEEN     31
+                 118 RAIZY     38
+110 BAILA     46
+                                  125 JAYLEEN    31
+                 118 SHAINDY   38
+110 BROOKE    46
+                                  125 JULISSA    31
+                 119 CLARA     37
+110 FATOUMATA 46
+                                  125 LINDA      31
+                 119 ELIZA     37
+110 MORGAN    46
+                                  125 NECHAMA    31
+                 119 EVE       37
+111 HALEY     45
+                                  132 LEILANI   24
+                 129 LYDIA     27
+125 NYLA      31
+                                  132 LOLA      24
+                 129 MARIAMA   27
+125 RENEE     31
+                                  132 MARYAM    24
+                 129 MARIANA   27
+126 AMANI     30
+                                  132 NATHALY   24
+                 129 PAULINA   27
+126 AMINATA   30
+                                  132 SAMARA    24
+                 129 PRINCESS  27
+126 ARIELLA   30
+                                  132 SHOSHANA  24
+                 129 ROCHEL    27
+126 AVERY     30
+                                  132 TANYA     24
+                 129 SANAA     27
+126 LISBETH   30
+                                  132 YAEL      24
+                 129 SHIRA     27
+126 MARILYN   30
+                                  133 ADINA     23
+                 129 THALIA    27
+126 PARIS     30
+                                  133 AUTUMN    23
+                 129 YESENIA   27
+126 RILEY     30
+                                  133 CARLA     23
+                 130 ADA       26
+126 SHANIYA   30
+                                  133 DESIREE   23
+                 130 ANAIS     26
+126 SONIA     30
+                                  133 ELENA     23
+                 130 DOMINIQUE 26
+126 TANIA     30
+                                  133 IRIS      23
+                 130 ELISA     26
+126 TIANNA    30
+                                  133 LILIANA   23
+                 130 ESMERALDA 26
+127 ANGELIQUE 29
+                                  133 MARINA    23
+                 130 JANELLE   26
+127 CARMEN    29
+                                  133 MINDY     23
+                 130 KAITLIN   26
+127 CHANEL    29
+                                  133 NATALY    23
+                 130 LIANA     26
+127 EDEN      29
+                                  133 RYAN      23
+                 130 LUZ       26
+127 ISIS      29
+                                  133 SERENITY  23
+                 130 PHOEBE    26
+127 KYRA      29
+                                  134 ANIKA     22
+                 130 RAVEN     26
+127 MARISSA   29
+                                  134 CECILIA   22
+                 130 SADE      26
+127 NYA       29
+                                  134 CRISTINA  22
+                 130 SAMIRA    26
+127 RIVKY     29
+                                  134 ELLIE     22
+                 130 SELENA    26
+127 ROSE      29
+                                  134 GISSELLE  22
+                 130 SKYLAR    26
+127 SADIE     29
+                                  134 JANAE     22
+                 130 WINNIE    26
+127 SALMA     29
+                                  134 JOHANNA   22
+                 130 YITTY     26
+127 SELINA    29
+                                  134 KIMORA    22
+                 131 ALISSA    25
+127 TALIYAH   29
+                                  134 MACKENZIE 22
+                 131 ALIZA     25
+127 VICKY     29
+                                  134 PAOLA     22
+                 131 CAITLYN   25
+128 ADRIANNA  28
+                                  134 SUMMER    22
+                 131 DAYANARA  25
+128 ALEXIA    28
+                                  134 TYLER     22
+                 131 ELAINE    25
+128 ALINA     28
+                                  135 ALANNA    21
+                 131 ELEANOR   25
+128 ANYA      28
+                                  135 ANNABELLE 21
+                 131 HELENA    25
+128 CARLY     28
+                                  135 APRIL     21
+                 131 JANIYA    25
+128 GEORGIA   28
+                                  135 ASIA      21
+                 131 JAYLA     25
+128 JOSELYN   28
+                                  135 CELINE    21
+                 131 KAILA     25
+128 MEGHAN    28
+                                  135 FRANCES   21
+                 131 KATHLEEN  25
+128 NICOLETTE 28
+                                  135 HAYLEY    21
+                 131 PRISCILLA 25
+128 NORA      28
+                                  135 JUDY      21
+                 131 TARA      25
+128 ROSA      28
+                                  135 JULIET    21
+                 131 YOCHEVED  25
+128 SARAI     28
+                                  135 KAYLEEN   21
+                 132 AILEEN    24
+128 SHANNON   28
+                                  135 LINA      21
+                 132 ANISA     24
+128 TAMARA    28
+                                  135 LINDSEY   21
+                 132 BELLA     24
+128 YASMIN    28
+                                  135 MADELYN   21
+                 132 BLIMA     24
+129 AMINA     27
+                                  135 PESSY     21
+                 132 GOLDY     24
+129 ANNE      27
+                                  135 REGINA    21
+                 132 IRENE     24
+129 DEANNA    27
+                                  135 SANDY     21
+                 132 JAIDA     24
+129 JANE      27
+                                  135 SHAKIRA   21
+                 132 JAILYN    24
+129 JAYLIN    27
+                                  135 SHAYNA    21
+                 132 JOY       24
+129 KELSEY    27
+                                  135 SKYLA     21
+                 132 KRISTIN   24
+129 LARA      27
+                                  140 LEANNA    16
+                138 HANA       18
+135 STACY    21
+                                  140 LEYLA     16
+                138 HINDY      18
+135 VIOLET   21
+                                  140 PENELOPE  16
+                138 KAIA       18
+136 AMYA     20
+                                  140 PERLA     16
+                138 KASSANDRA  18
+136 ANN      20
+                                  140 RACHAEL   16
+                138 LANA       18
+136 BRACHA   20
+                                  140 ROSELYN   16
+                138 LENA       18
+136 BRITTNEY 20
+                                  140 SANA      16
+                138 NOELLE     18
+136 CHASITY  20
+                                  140 SHERLYN   16
+                138 REBECA     18
+136 EMILIA   20
+                                  140 SHERRY    16
+                138 TATYANA    18
+136 FANTA    20
+                                  140 SIDNEY    16
+                138 YASMINE    18
+136 FELICIA  20
+                                  140 TAMMY     16
+                139 AYESHA     17
+136 JACLYN   20
+                                  141 ALLYSON   15
+                139 CHIARA     17
+136 KATRINA  20
+                                  141 AMIRAH    15
+                139 CRISTAL    17
+136 KAYLIN   20
+                                  141 ANNETTE   15
+                139 EMANI      17
+136 MARIE    20
+                                  141 ANNIKA    15
+                139 FAIGA      17
+136 MARLENE  20
+                                  141 AYANA     15
+                139 GIULIANA   17
+136 SHANICE  20
+                                  141 BETHANY   15
+                139 GLORIA     17
+136 SKYLER   20
+                                  141 BREINDY   15
+                139 HANNA      17
+136 TAINA    20
+                                  141 CARINA    15
+                139 HEATHER    17
+136 ZARA     20
+                                  141 ELISABETH 15
+                139 HOPE       17
+137 AIMEE    19
+                                  141 ELISE     15
+                139 INGRID     17
+137 AISSATOU 19
+                                  141 ESSENCE   15
+                139 JANICE     17
+137 ANJALI   19
+                                  141 GIA       15
+                139 JAYLYNN    17
+137 ATHENA   19
+                                  141 HEIDI     15
+                139 JIA        17
+137 CASSIDY  19
+                                  141 IMAN      15
+                139 JUSTINA    17
+137 GIANA    19
+                                  141 INES      15
+                139 KAILEY     17
+137 HILLARY  19
+                                  141 JANIYAH   15
+                139 KAYA       17
+137 ILANA    19
+                                  141 KATHARINE 15
+                139 KENNEDY    17
+137 INDIA    19
+                                  141 KIRSTEN   15
+                139 KIRA       17
+137 JANET    19
+                                  141 LEA       15
+                139 LIA        17
+137 JAZMINE  19
+                                  141 MARISA    15
+                139 MELINA     17
+137 JOLIE    19
+                                  141 MICHELE   15
+                139 MIKAELA    17
+137 JUDITH   19
+                                  141 MILAGROS  15
+                139 NATHALIA   17
+137 JULIETTE 19
+                                  141 NOELIA    15
+                139 NOA        17
+137 KAILYN   19
+                                  141 REBEKAH   15
+                139 RACHELLE   17
+137 LINDSAY  19
+                                  141 RIFKY     15
+                139 TAMAR      17
+137 MAIA     19
+                                  141 SABINA    15
+                139 THERESA    17
+137 MANDY    19
+                                  141 SALLY     15
+                139 VIVIANA    17
+137 NYASIA   19
+                                  141 SHAINA    15
+                140 ALESSANDRA 16
+137 SCARLETT 19
+                                  141 STEPHANY  15
+                140 ARLY       16
+137 SIMONE   19
+                                  141 TIA       15
+                140 ASHLEE     16
+137 TENZIN   19
+                                  141 TORI      15
+                140 CAROL      16
+137 TERESA   19
+                                  142 AHUVA     14
+                140 CELESTE    16
+137 YEHUDIS  19
+                                  142 ALISA     14
+                140 DENISSE    16
+137 YIDES    19
+                                  142 AMELIE    14
+                140 ERICKA     16
+137 ZAINAB   19
+                                  142 ANGELES   14
+                140 FATOU      16
+138 ANTONIA  18
+                                  142 ANGELINE  14
+                140 ITZEL      16
+138 BARBARA  18
+                                  142 ANNABEL   14
+                140 JADYN      16
+138 CIERRA   18
+                                  142 ARIELA    14
+                140 JOANNE     16
+138 DALIA    18
+                                  142 AURORA    14
+                140 KEILA      16
+138 GIOVANNA 18
+                                  142 AYA       14
+                140 KIERA      16
+138 GITTEL   18
+                                    144 LORRAINE   12
+                  143 JOSELIN    13
+142 CARISSA    14
+                                    144 LUISA      12
+                  143 JULIANNE   13
+142 CAROLYN    14
+                                    144 MCKAYLA    12
+                  143 KEYLA      13
+142 CELIA      14
+                                    144 MEREDITH   12
+                  143 KYARA      13
+142 CELINA     14
+                                    144 NATALYA    12
+                  143 LILLY      13
+142 CHANY      14
+                                    144 NEHA       12
+                  143 LYLA       13
+142 CHEYANNE   14
+                                    144 NIKKI      12
+                  143 MAEVE      13
+142 DAPHNE     14
+                                    144 NOOR       12
+                  143 MALIKA     13
+142 DAYNA      14
+                                    144 PALOMA     12
+                  143 MIRACLE    13
+142 ELISHEVA   14
+                                    144 PAULA      12
+                  143 MIREL      13
+142 HAWA       14
+                                    144 PIPER      12
+                  143 MONIQUE    13
+142 JOEY       14
+                                    144 SHANYA     12
+                  143 NAYA       13
+142 KARA       14
+                                    144 SHELBY     12
+                  143 NYLAH      13
+142 KENDRA     14
+                                    144 SIMRAN     12
+                  143 SARINA     13
+142 KYA        14
+                                    144 SONYA      12
+                  143 SHAINDEL   13
+142 LESLEY     14
+                                    144 SYEDA      12
+                  143 SHANA      13
+142 LIBBY      14
+                                    144 SYLVIE     12
+                  143 SHEILA     13
+142 LIZ        14
+                                    144 TRANY      12
+                  143 SHREYA     13
+142 LUNA       14
+                                    144 TREASURE   12
+                  143 SHYANNE    13
+142 MARGOT     14
+                                    144 YAHAIRA    12
+                  143 TRENYCE    13
+142 NYAH       14
+                                    144 YARITZA    12
+                  143 YAZMIN     13
+142 PRIYA      14
+                                    144 YVONNE     12
+                  144 ALEJANDRA  12
+142 ROSEMARY   14
+                                    144 ZARIA      12
+                  144 ALESSIA    12
+142 SANAI      14
+                                    145 ABBY       11
+                  144 ALIYA      12
+142 SHIFRA     14
+                                    145 ADIA       11
+                  144 AMARI      12
+142 SILVIA     14
+                                    145 ALANIS     11
+                  144 AMINAH     12
+142 TABITHA    14
+                                    145 ALYSON     11
+                  144 AMIRA      12
+142 TESS       14
+                                    145 AMALIA     11
+                  144 ANAHI      12
+142 VIRGINIA   14
+                                    145 AMERICA    11
+                  144 ANGELY     12
+142 ZARIAH     14
+                                    145 ANTOINETTE 11
+                  144 ANITA      12
+143 AICHA      13
+                                    145 ASHA       11
+                  144 ARACELY    12
+143 AIDA       13
+                                    145 BAILEY     11
+                  144 ARMANI     12
+143 ALANI      13
+                                    145 BRIA       11
+                  144 BETTY      12
+143 ARACELI    13
+                                    145 CATALINA   11
+                  144 BONNIE     12
+143 AWA        13
+                                    145 CHELSEY    11
+                  144 CARA       12
+143 BLIMY      13
+                                    145 DAMARIS    11
+                  144 CHRISTIANA 12
+143 BRUCHA     13
+                                    145 DEJA       11
+                  144 CHRISTIE   12
+143 CAMERON    13
+                                    145 EDITH      11
+                  144 DESIRE     12
+143 CAMILLA    13
+                                    145 ELENI      11
+                  144 ELMA       12
+143 DAYANA     13
+                                    145 ELSA       11
+                  144 GOLDA      12
+143 DELILAH    13
+                                    145 ETTY       11
+                  144 GRACIE     12
+143 DESTINEE   13
+                                    145 FRADEL     11
+                  144 ILIANA     12
+143 ELLE       13
+                                    145 FRIMET     11
+                  144 ISABELA    12
+143 ELLEN      13
+                                    145 HALLE      11
+                  144 JAMYA      12
+143 EVELIN     13
+                                    145 HOLLY      11
+                  144 JAYLYN     12
+143 FRANCHESCA 13
+                                    145 JAZLYN     11
+                  144 KALIYAH    12
+143 HADASSAH   13
+                                    145 JEANINE    11
+                  144 KAMILA     12
+143 IZABELLA   13
+                                    145 JENNIE     11
+                  144 KEIRA      12
+143 JADEN      13
+                                    145 KAI        11
+                  144 KRISTINE   12
+143 JAILEEN    13
+                                    145 KARISSA    11
+                  144 LILIAN     12
+143 JANIA      13
+                                    145 KAROLINA   11
+                  144 LOGAN      12
+143 JOAN       13
+                                 146 LAISHA   10
+                 146 BEYONCE  10
+145 KATELYNN  11
+                                 146 LIBA     10
+                 146 CAMRYN   10
+145 KENYA     11
+                                 146 LORENA   10
+                 146 CHANTEL  10
+145 KHADIJAH  11
+                                 146 LORI     10
+                 146 CHRISTY  10
+145 KIANNA    11
+                                 146 LYRIC    10
+                 146 COLLEEN  10
+145 KRISTY    11
+                                 146 MADISYN  10
+                 146 CONNIE   10
+145 LITZY     11
+                                 146 MAIMOUNA 10
+                 146 DAKOTA   10
+145 LOURDES   11
+                                 146 MALAK    10
+                 146 DANNA    10
+145 MALAIKA   11
+                                 146 MALAYSIA 10
+                 146 DARLENE  10
+145 MARIANNA  11
+                                 146 MAME     10
+                 146 DELIA    10
+145 MARTHA    11
+                                 146 MARISOL  10
+                 146 DEVORA   10
+145 MERCEDES  11
+                                 146 MARITZA  10
+                 146 DIANE    10
+145 MICAELA   11
+                                 146 MATILDA  10
+                 146 DIVYA    10
+145 MINA      11
+                                 146 MAXINE   10
+                 146 DOROTHY  10
+145 MORIAH    11
+                                 146 REINA    10
+                 146 ELYSE    10
+145 NAYELI    11
+                                 146 RENA     10
+                 146 EMELYN   10
+145 RAIZEL    11
+                                 146 RIA      10
+                 146 ESME     10
+145 REYNA     11
+                                 146 RIVKAH   10
+                 146 ESTEFANY 10
+145 RITA      11
+                                 146 SAMIA    10
+                 146 EUNICE   10
+145 ROCHELLE  11
+                                 146 SANIYA   10
+                 146 FRAIDY   10
+145 SADIA     11
+                                 146 SAVANNA  10
+                 146 GILLIAN  10
+145 SHANI     11
+                                 146 SCARLET  10
+                 146 HILARY   10
+145 SHEYLA    11
+                                 146 SELMA    10
+                 146 HINDA    10
+145 SIMA      11
+                                 146 SHANTEL  10
+                 146 IYANA    10
+145 SKY       11
+                                 146 SYLVIA   10
+                 146 IYANNA   10
+145 TANIYA    11
+                                 146 TESSA    10
+                 146 JAILENE  10
+145 TATIANNA  11
+                                 146 VICKI    10
+                 146 JALIYAH  10
+145 TONI      11
+                                 146 VIVIEN   10
+                 146 JEANETTE 10
+145 WHITNEY   11
+                                 146 XIN      10
+                 146 JESSENIA 10
+145 WILLA     11
+                                 146 YOSELIN  10
+                 146 JIANNA   10
+145 XIOMARA   11
+                                 146 YUKI     10
+                 146 JOHANA   10
+145 YASMEEN   11
+                                 146 YVETTE   10
+                 146 JOLENE   10
+146 AMARA     10
+                 146 JORDANA  10
+146 AMIYAH    10
+                 146 KASEY    10
+146 ANGELIC   10
+                 146 KATIA    10
+146 ANISHA    10
+                 146 KAYLEIGH 10
+146 ANNABELLA 10
+                 146 KAYLIE   10
+146 ARIA      10
+                 146 KEILY    10
+146 ARYANNA   10
+                 146 KRISTA   10
+146 AYLA      10

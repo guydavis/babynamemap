@@ -1,0 +1,102 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <%= render :partial => "layouts/header", :locals => { 
+      :title => "Baby Name Map - Popular baby names from around the world" } %>
+</head>
+<body onload="load()" onunload="GUnload()">
+  <%= render :partial => "layouts/top", :locals => { 
+    :subtitle => "Discover the popularity of baby names around the world." } %>
+  <%= render :partial => "layouts/left", :locals => { :remote_search => true }%>
+  <div id="map"><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
+    <div style='text-align:center;width:100%'>
+      <%=image_tag "progress_bar.gif"%><br />
+      <div style='line-height:2em;'>Loading Map...</div>
+    </div>
+  </div>
+  <%= render :partial => "layouts/right", :locals => { :remote_search => true } %>
+  <%= render :partial => "layouts/bottom", :locals => { :div_id => "map_bottom"} %>
+  
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%=@api_key%>"
+    type="text/javascript"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+  // Redirect any users of MSIE 6.0 to my upgrade page as this won't render for them
+  if (navigator.userAgent.indexOf("MSIE 6.0") != -1) {
+    window.location.href = "/map/upgrade"
+  }
+
+  var map;
+  var markers = new Array();
+  function addMarker(point, title, boyTab, girlTab, region_id) {
+    var marker = new GMarker(point, { title : title});
+    var btab = new GInfoWindowTab("Boys", boyTab);
+    var gtab = new GInfoWindowTab("Girls", girlTab);
+    d = new Date();
+    if (d.getTime() % 2 == 0) {
+      var tabs = [btab,gtab];
+    }
+    else {
+      var tabs = [gtab,btab];
+    }
+    
+    GEvent.addListener(marker, "click", function() {
+      if (navigator.userAgent.indexOf("MSIE") != -1) {
+        marker.openInfoWindowTabsHtml(tabs);
+      } else { // Only IE is broken for Google's Maximize feature
+        var maxContentDiv = document.createElement('div');
+        maxContentDiv.update("Loading...");
+        marker.openInfoWindowTabsHtml(tabs, {maxContent: maxContentDiv, maxTitle: title});
+        var iw = map.getInfoWindow();
+        var maxHandler = GEvent.addListener(iw, "maximizeclick", function() {
+          GDownloadUrl("/region/info_win_max/" + region_id, function(data) {
+            maxContentDiv.update(data);
+          });
+          GEvent.removeListener(maxHandler);
+        });
+      }
+    });
+    map.addOverlay(marker);
+    markers[region_id] = marker;
+  }
+  
+  function load() {
+    if (GBrowserIsCompatible()) {
+      map = new GMap2(document.getElementById("map"));
+      map.addControl(new GLargeMapControl());
+      map.addControl(new GMapTypeControl());
+      map.addControl(new GOverviewMapControl());
+      map.addMapType(G_PHYSICAL_MAP);
+      map.enableContinuousZoom();
+      point = new GLatLng(<%=@lat%>,<%=@lng%>);
+      map.setCenter(point, 3); 
+
+      <% for r in @regions -%>
+         addMarker(new GLatLng(<%=r.lat%>,<%=r.lng%>), '<%=marker_title(r)%>', "<%= render :partial => "popular", :locals => { :region => r, :gender => "MALE"} -%>", "<%= render :partial => "popular", :locals => { :region => r, :gender => "FEMALE"} -%>", <%=r.id%>);
+      <% end -%>
+
+      mapUserLocate(window.location.href);
+    }
+  }
+  //]]>
+  </script> 
+</body>
+</html>

@@ -1,0 +1,112 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div id="left">
+  <%=link_to image_tag("baby.jpg", :alt=>''), "/"%>
+  <div class="roundedcornr_box_664730">
+    <div class="roundedcornr_top_664730"><div></div></div>
+    <div id="search_form_container" class="roundedcornr_content_664730_search">
+      <div>Search Given Names</div>
+      <% if (params[:gender] and (params[:gender].downcase == "female")) %>
+      <input id="male_button" name="gender" type="radio" value="male"/> Boys&nbsp;&nbsp;
+      <input id="female_button" name="gender" type="radio" value="female" checked="checked"/> Girls
+      <% else %>
+      <input id="male_button" name="gender" type="radio" value="male" checked="checked"/> Boys&nbsp;&nbsp;
+      <input id="female_button" name="gender" type="radio" value="female"/> Girls
+      <% end %>
+      <br />
+      <input autocomplete="off" id="search_name" name="search_name" type="text" value="<%=params[:search_name]%>"/>
+      <div class="auto_complete" id="search_name_auto_complete"></div><script type="text/javascript">
+      var options = {
+        callback: function(field,querystring) {
+          if ($('male_button').checked) {
+            querystring+='&gender=MALE';
+          }
+          else {
+            querystring+='&gender=FEMALE';
+          }
+          return querystring;
+        }
+      };
+      var search_name_auto_completer = new Ajax.Autocompleter('search_name', 
+        'search_name_auto_complete', 
+        '/map/auto_complete_for_search_name', options);
+<% if remote_search %>         
+      $('search_name').observe('keyup', function(e) {
+        if (e.keyCode == Event.KEY_RETURN) {
+          sendXhrSearch(Form.serialize('search_form_container'));
+        }    
+      });
+      </script>          
+      <%= image_tag("indicator.gif", :id => 'search_indicator', :style => 'display:none;', :alt=>'') %>
+      <a href="#" title="Show Popularity on Map" onclick="sendXhrSearch(Form.serialize('search_form_container'));"><%=image_tag("icons/world_go.png", :id=>'search_icon', :alt=>'Show Popularity on Map')-%></a>
+<% else %>
+      $('search_name').observe('keyup', function(e) {
+        if (e.keyCode == Event.KEY_RETURN) {
+          showSearchedMap($('male_button').checked, $('search_name').value);
+        }    
+      });
+      </script>
+      <%= image_tag("indicator.gif", :id => 'search_indicator', :style => 'display:none;', :alt=>'') %>
+      <%=link_to_function image_tag("icons/world_go.png", :alt=>"Show Baby Name Popularity on Google Map", :id=>'search_icon'),
+        "showSearchedMap($('male_button').checked, $('search_name').value)" 
+       %>
+<% end %>      
+    </div>
+    <div class="roundedcornr_bottom_740840"><div></div></div>
+  </div>
+  <div style="line-height:0.5em;">&nbsp;</div> 
+  <div class="roundedcornr_box_740840">
+     <div class="roundedcornr_top_740840"><div></div></div>
+     <div class="roundedcornr_content_740840_regions">
+      Zoom to Region
+       <%= render :partial=>'map/region_tree', :locals => { :remote_search => remote_search } %> 
+     </div>
+     <div class="roundedcornr_bottom_740840"><div></div></div>
+  </div>
+  <div style="line-height:0.5em;">&nbsp;</div>  
+  <div class="roundedcornr_box_664730">
+      <div class="roundedcornr_top_664730"><div></div></div>
+      <div class="roundedcornr_content_664730_favorites">
+         Your Favorites <hr />
+        <div id="favorites"></div>
+      </div>
+      <div class="roundedcornr_bottom_664730"><div></div></div>
+   </div>
+   <div style="line-height:0.5em;">&nbsp;</div> 
+  <div class="roundedcornr_box_740840">
+     <div class="roundedcornr_top_740840"><div></div></div>
+     <div class="roundedcornr_content_740840_regions">
+     Stats and Charts
+     <hr />
+     <div id="tools_link">
+      <%=link_to "Compare Names", "javascript:compareNames();"%> &nbsp;
+      <%=link_to image_tag("icons/chart_curve.png",
+        :alt=> "Compare Names"), "javascript:compareNames();"%><br />
+
+      <%=link_to "View Boys' Names", "/name/browse/male" %> 
+      <%=link_to image_tag("icons/male.png", :alt=> "Browse All Boys' Names"), 
+         "/name/browse/male", :title=>"Browse All Boys' Names" %><br/>
+        
+      <%=link_to "View Girls' Names", "/name/browse/female" %>    
+      <%=link_to image_tag("icons/female.png", :alt=> "Browse All Girls' Names"),
+         "/name/browse/female", :title=>"Browse All Girls' Names" %>
+      </div>
+     </div>
+     <div class="roundedcornr_bottom_740840"><div></div></div>
+  </div>
+</div>

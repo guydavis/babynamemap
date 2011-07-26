@@ -1,0 +1,50 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+<% if @name %>
+document.title = "Popular baby name: <%=escape_javascript(@name.name)%>";
+<%end%>
+<% if @regions.size > 0 %>
+map.clearOverlays();
+markers.clear();
+showResultsMiniWindow('<%=escape_javascript(@name.name)%>',<%=@name.id%>, '<%=@name.gender.downcase%>');
+var baseIcon = new GIcon();
+baseIcon.shadow = "/images/map_pins/msmarker.shadow.png";
+baseIcon.iconSize = new GSize(32, 32);
+baseIcon.shadowSize = new GSize(59, 32);
+baseIcon.iconAnchor = new GPoint(9, 34);
+baseIcon.infoWindowAnchor = new GPoint(9, 2);
+baseIcon.infoShadowAnchor = new GPoint(18, 25);
+
+var bounds = new GLatLngBounds();
+<% for r in @regions -%>
+bounds.extend(addSearchMarker(<%=r.id%>,new GLatLng(<%=r.lat-%>, <%=r.lng-%>), new GIcon(baseIcon, '<%=map_icon_path(r.popularity)%>'), '<%=marker_title_with_pop(r, r.popularity)%>', "<%= render :partial => "name_search", :locals => { :r => r } -%>"));
+<% end %>
+<% if @nearest_region %>
+zoomToRegion(<%=@nearest_region.lat%>,<%=@nearest_region.lng%>,<%=@nearest_region.id%>,map.getBoundsZoomLevel(bounds));
+<% else %>
+map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+<% end %>
+<% elsif @name  %>
+map.clearOverlays();
+markers.clear();
+showNameWindow('<%=escape_javascript(@name.name)%>', <%=@name.id%>, 'popularity');
+
+<% else %>
+document.title = "Baby Name Map - Popular names from around the world";
+showErrorMessage("No Results Found", "Wow!  That's a unique name.  It was not found in any regions' list of popular names.  Please try another search.");
+<% end %>
+

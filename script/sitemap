@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+#
+# Rebuilds a sitemap file in public/sitemap.xml based on current database.
+# Usage: script/sitemap
+#
+
+require 'rexml/document'
+require File.dirname(__FILE__) + '/../config/environment'
+include REXML
+
+def add_map(parent, loc, lastmod)
+  map_el = parent.add_element "sitemap"
+  loc_el = map_el.add_element "loc"
+  loc_el.add_text "http://www.babynamemap.com" + loc
+  mod_el = map_el.add_element "lastmod"
+  mod_el.add_text lastmod.strftime("%Y-%m-%d")
+end
+
+def add_url(parent, loc, lastmod, changefreq, priority)
+  url_el = parent.add_element "url"
+  loc_el = url_el.add_element "loc"
+  loc_el.add_text "http://www.babynamemap.com" + loc
+  mod_el = url_el.add_element "lastmod"
+  mod_el.add_text lastmod.strftime("%Y-%m-%d")
+  freq_el = url_el.add_element "changefreq"
+  freq_el.add_text changefreq
+  prior_el = url_el.add_element "priority"
+  prior_el.add_text priority
+end
+
+# Output the sitemapindex
+doc = REXML::Document.new
+root = doc.add_element 'sitemapindex'
+root.attributes['xmlns'] ="http://www.sitemaps.org/schemas/sitemap/0.9"
+add_map(root, '/sitemaps/main.xml', Time.now)
+for letter in ('A'..'Z')
+ add_map(root, '/sitemaps/'+letter+'.xml', Time.now)
+end
+File.open(File.dirname(__FILE__) + '/../public/sitemapindex.xml', "w") do |file|
+  doc.write(file)
+end
+
+# Output the main sitemap of regions and main pages
+doc = REXML::Document.new
+urlset = doc.add_element 'urlset'
+urlset.attributes['xmlns'] ="http://www.sitemaps.org/schemas/sitemap/0.9"
+# Add the main page
+add_url(urlset, "/", Time.now, 'daily', '1.0')
+# Add the two browse pages
+add_url(urlset, "/name/browse/male", Time.now, 'weekly', '0.9')
+add_url(urlset, "/name/browse/female", Time.now, 'weekly', '0.9')
+# Add each regions table page and the direct region link
+for region in Region.find(:all)
+  add_url(urlset, "/region/popular/male/" + region.id.to_s, region.updated_at, 'monthly', '0.6')
+  add_url(urlset, "/region/popular/female/" + region.id.to_s, region.updated_at, 'monthly', '0.6')
+  add_url(urlset, "/map/region/" + region.id.to_s, region.updated_at, 'monthly', '0.8')
+end
+File.open(File.dirname(__FILE__) + '/../public/sitemaps/main.xml', "w") do |file|
+  doc.write(file)
+end
+
+# Now add a page for each is_popular name
+for letter in ('A'..'Z')
+  doc = REXML::Document.new
+  urlset = doc.add_element 'urlset'
+  urlset.attributes['xmlns'] ="http://www.sitemaps.org/schemas/sitemap/0.9"
+  for name in Name.find_by_sql("select * from names where UPPER(name) like '" + letter \
+    + "%' and is_popular order by rating_avg desc, rating_total desc")
+    if name.gender == "MALE"
+      type = "boys"
+    else
+    type = "girls"
+    end
+    add_url(urlset,"/"+type+"/"+CGI::escape(name.name), Time.now,'monthly',((name.rating_avg||0)/10).to_s)
+  end
+  File.open(File.dirname(__FILE__) + '/../public/sitemaps/' + letter + '.xml', "w") do |file|
+    doc.write(file)
+  end
+end
+
+

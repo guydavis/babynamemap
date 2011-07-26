@@ -1,0 +1,62 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div class='name_detail_label'>Visitor Rating: </div>
+
+<div id='name_rating'>
+<ul class='star-rating'>
+  <li class='current-rating' style='width:<%=((@name.rating_average||0) * 25)%>px'></li>
+  <li><%=link_to_remote "1", { 
+      :url => { :controller => "name", :action => "rate", :id => @name.id, :rating => 1 },
+      :complete => "showSearchProgress(false)",
+      :success => "updateNameRating(request)",
+      :failure => "showXhrFailure(request)" },
+      { :class=>'one-star', :title => 'Horrible!'}%></li>
+  <li><%=link_to_remote "1", { 
+      :url => { :controller => "name", :action => "rate", :id => @name.id, :rating => 2 },
+      :complete => "showSearchProgress(false)",
+      :success => "updateNameRating(request)",
+      :failure => "showXhrFailure(request)" },
+      { :class=>'two-stars',:title => 'So-so'} %></li>
+  <li><%=link_to_remote "1", {  
+      :url => { :controller => "name", :action => "rate", :id => @name.id, :rating => 3 },
+      :complete => "showSearchProgress(false)",
+      :success => "updateNameRating(request)",
+      :failure => "showXhrFailure(request)"},
+      { :class=>'three-stars',:title => 'Pretty good'} %></li>  
+  <li><%=link_to_remote "1", { 
+      :url => { :controller => "name", :action => "rate", :id => @name.id, :rating => 4 },
+      :complete => "showSearchProgress(false)",
+      :success => "updateNameRating(request)",
+      :failure => "showXhrFailure(request)"},
+      { :class=>'four-stars',:title => 'Like it'} %></li>    
+  <li><%=link_to_remote "1", { 
+      :url => { :controller => "name", :action => "rate", :id => @name.id, :rating => 5 },
+      :complete => "showSearchProgress(false)",
+      :success => "updateNameRating(request)",
+      :failure => "showXhrFailure(request)"},
+      { :class=>'five-stars', :title => 'Love it!'} %></li>    
+</ul>
+</div>
+
+<div style="font-size:.85em;">
+<% if @name.rated? %>
+  <%=format("%0.1f", @name.rating_average)%> out of 5 
+  (<%=@name.rated_count%> votes)
+<% end %>
+  Click a star to vote.
+</div>

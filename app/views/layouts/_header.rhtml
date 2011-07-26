@@ -1,0 +1,39 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title><%=title%></title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="alternate" title="Baby Name Map Blog" href="http://blog.babynamemap.com/feeds/posts/default" type="application/rss+xml">
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag 'ext/css/ext-all.css' %>
+  <%= stylesheet_link_tag "star_rating.css" %>
+  <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/scriptaculous.js"></script>
+  <%= javascript_include_tag "application.js" %>
+  <%= javascript_include_tag "ext/ext-prototype-adapter.js" %>
+  <%= 
+  if ENV['RAILS_ENV'] == 'production'
+    javascript_include_tag "ext/ext-all.js"
+  else 
+    javascript_include_tag "ext/ext-all-debug.js"
+  end
+  %>
+  <link rel="search" type="application/opensearchdescription+xml" 
+   title="Popular Boys' Names" href="/opensearch/boys.xml">
+  <link rel="search" type="application/opensearchdescription+xml" 
+   title="Popular Girls' Names" href="/opensearch/girls.xml">

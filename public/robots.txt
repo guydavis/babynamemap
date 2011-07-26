@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /map/upgrade
+Disallow: /region/popular_data
+Disallow: /name/browse_data
+Disallow: /region/info_win_max/*
+Disallow: /name/browse/*/*
+Disallow: /map/auto_complete_for_search_name
+Disallow: /region/popular/male/*/*
+Disallow: /region/popular/female/*/*

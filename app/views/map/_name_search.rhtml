@@ -1,0 +1,42 @@
+<%=
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  html = "<div id='infobox' style='height:102px;'><div style='text-align:center;font-size:1.3em;font-weight:bold;margin-bottom:5px;margin-top:5px;vertical-align:top'>"
+  html += image_tag("icons/" + r.gender.downcase + ".png")
+  html += "&nbsp;&nbsp;"
+  html += link_to h(r.name), "javascript:showNameWindow('" + escape_javascript(r.name) + "', " + r.name_id.to_s + ", 'details', " + r.id.to_s + ")"
+  html += "&nbsp;&nbsp;"
+  html += link_to(image_tag("icons/chart_curve.png", :alt=>'Chart Popularity'), "javascript:showNameWindow('" + escape_javascript(r.name) + "', " + r.name_id.to_s + ", 'popularity', " + r.id.to_s + ")", :title=>'Chart Popularity')
+  html += "</div><table border='1' cellspacing='0' cellpadding='0'><caption>"
+  html += r.full_name
+  html +=  "  (%d)" % r.current_year
+  html += "</caption><tr><th width='15%'>Rank</th><th width='58%'>Popularity</th><th width='17%'>Count</th><th width='10%'>&nbsp;</th></tr>" 
+  html += "<tr><td>%d</td><td>" % r.rank
+  html += popularity_label(r.popularity)
+  html += "</td><td>" + (r.count||"").to_s + "</td><td>"
+  html += link_to image_tag("icons/heart_add.png", :alt=>"Add to Favorites"), "javascript:addFave(" + r.name_id.to_s + ",'" + escape_javascript(r.name) + "','" + r.gender.downcase + "')", :title=>"Add to Favorites"
+  html += "</td></tr>" 
+  html += "</table>"
+  if r.stats_url
+    html += "<span style='float:left;margin-top:4px;'>"
+    html += link_to image_tag("icons/book.png", :alt=>'View Stats Source'), r.stats_url, :target=>'_blank', :title=>'View Stats Source'
+    html += "</span>"
+  end
+  html += "<span style='float:right;margin-top:8px;'>"
+  html += link_to("View the rest of the " + boy_or_girl(r.gender).downcase + "s' names...", {:controller=>'region', :action=>'popular', :gender=>r.gender.downcase, :region_id=>r.id})
+  html += "</span></div>"  
+  escape_javascript(html)
+-%>

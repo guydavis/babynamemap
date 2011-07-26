@@ -1,0 +1,104 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div id="right_links_above">
+  &nbsp;
+  <%=link_to image_tag("icons/newspaper.png", :alt=>"Blog") + " Blog",
+      "http://blog.babynamemap.com", :target=>'_blank'%>&nbsp;
+  <%=link_to_remote image_tag("icons/ruby.png", :alt=>"About the Map") + " About",
+      :url => { :controller => "info", :action => "about"},
+      :success => "showModalInfoWindow(request, 'About the Baby Name Map', 500, 350)",
+      :failure => "showXhrFailure(request)" %>&nbsp;
+   <%=link_to_remote image_tag("icons/email.png", :alt=>"Contact Me") + " Contact",
+      :url => { :controller => "info", :action => "contact"},
+      :success => "showModalInfoWindow(request, 'Contact Me', 350, 280)",
+      :failure => "showXhrFailure(request)" %>
+</div>
+
+<div id="right_links_below">
+  <%=link_to_remote image_tag("icons/share.gif", :alt=>"Share") + " Share",
+    :url => { :controller => "info", :action => "share"},
+    :success => "showModalInfoWindow(request, 'Share Site with Friends', 500, 400)",
+    :failure => "showXhrFailure(request)" %>&nbsp;&nbsp;
+  <%=link_to_remote image_tag("icons/help.png", :alt=>"FAQ") + " Questions?",
+      :url => { :controller => "info", :action => "faq"},
+      :success => "showModalInfoWindow(request, 'Frequently Asked Questions', 500, 420)",
+      :failure => "showXhrFailure(request)" %>
+</div>
+<div id="right">
+
+  <% 
+    photo = Photo.find(:first, :conditions=>{:moderated=>true}, 
+      :order => 'rand()', :limit => 1)
+    if photo.name.gender == "MALE"
+      box_color_id = "740840"
+    else # Female
+      box_color_id = "664730"
+    end
+  %>
+
+  <div class="roundedcornr_box_<%=box_color_id%>">
+    <div class="roundedcornr_top_<%=box_color_id%>"><div></div></div>
+      <div class="roundedcornr_content_<%=box_color_id%>_popular">
+        <%= link_to h(photo.name.name), "javascript:showNameWindow('" + \
+          escape_javascript(photo.name.name) + "', " + photo.name.id.to_s \
+          + ", 'details')"%>
+        <%= image_tag("icons/" + photo.name.gender.downcase + ".png") %><br />
+        <%= link_to image_tag(photo.public_filename(:thumb), :width=>140, :style=>'margin-bottom:5px;', :alt=>''),  
+         "javascript:showNameWindow('" + escape_javascript(photo.name.name) \
+         + "', " + photo.name.id.to_s + ", 'photos')", :title=>'' %><br />
+        <% if photo.location %>
+          <div style='font-size:.85em;font-style:italic;text-align:right'>
+          <%=image_tag "icons/photo.png"%> from <%=h photo.location%>
+          </div>
+        <% end %>
+      </div>
+    <div class="roundedcornr_bottom_<%=box_color_id%>"><div></div></div>
+  </div>
+  <div style="line-height:0.5em;">&nbsp;</div> 
+   
+  <div class="roundedcornr_box_740840">
+    <div class="roundedcornr_top_740840"><div></div></div>
+    <div class="roundedcornr_content_740840_popular">
+      Popular Boys' Names<hr />
+      <%=popular_names("MALE", remote_search)%>
+    </div>
+    <div class="roundedcornr_bottom_740840"><div></div></div>
+  </div>
+   
+  <div style="line-height:0.5em;">&nbsp;</div> 
+  
+  <div class="roundedcornr_box_664730">
+      <div class="roundedcornr_top_664730"><div></div></div>
+      <div class="roundedcornr_content_664730_popular">
+        Popular Girls' Names<hr />
+        <%=popular_names("FEMALE", remote_search)%>
+      </div>
+      <div class="roundedcornr_bottom_664730"><div></div></div>
+   </div>
+ 
+  <div style="line-height:0.5em;">&nbsp;</div> 
+  <div class="roundedcornr_box_740840">
+     <div class="roundedcornr_top_740840"><div></div></div>
+     <div class="roundedcornr_content_740840_legend">
+      Map Legend<hr />
+        <%= render :partial => "map/legend" %>
+     </div>
+     <div class="roundedcornr_bottom_740840"><div></div></div>
+  </div>
+  
+</div>

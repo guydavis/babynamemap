@@ -1,0 +1,42 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<%= form_tag "/name/add_photo/" + @name.id.to_s, :multipart => true,
+ :target => 'upload_frame', :id => 'upload_form' %>
+<p>Last Name or Initial: <span style="color: gray;font-size:.85em;">(Optional)</span><br>
+<input style="width:300px;" name="photo[last_name]" value="" size="50" type="text"></p>
+
+<p>Home Town: <span style="color: gray;font-size:.85em;">(Optional)</span><br>
+<input style="width:300px;" name="photo[location]" value="" size="50" type="text"></p>
+
+<p>Birthday: <span style="color: gray;font-size:.85em;">(Optional)</span><br>
+<%=date_select("photo", "birthday",   :order => [:month, :day])%></p>
+
+<p>Photo: <span style="color: gray;font-size:.85em;">(Required) Baby photos are best, but photos at any age are welcome.</span><br>
+<input style="background-color: rgb(255, 255, 160);" name="photo[uploaded_data]" size="30" type="file"></p>
+
+<div id='captcha_div'>
+  <%= render(:partial => "captcha") %>
+</div>
+
+<p style='text-align:center;margin-top:10px'>
+  <%=image_submit_tag "photo_upload.gif", :style=>"border:none"%>
+  <%=image_tag "indicator.gif", :id=>'submit_indicator', :align=>'right', :style=>"display:none"%>  
+</p>
+
+</form>
+<iframe id="upload_frame" name="upload_frame" style="display: none"></iframe>

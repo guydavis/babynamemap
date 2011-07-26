@@ -1,0 +1,100 @@
+Emma 	1017
+	
+Mathilde 	910
+	
+Julie 	892
+	
+Sofie 	835
+	
+Laura 	822
+	
+Caroline 	774
+	
+Ida 	681
+	
+Sarah 	655
+	
+Freja 	626
+	
+Cecilie 	617
+	
+Anna 	607
+	
+Josefine 	548
+	
+Emilie 	531
+	
+Amalie 	480
+	
+Katrine 	453
+	
+Clara 	436
+	
+Maja 	426
+	
+Signe 	411
+	
+Camilla 	354
+	
+Lærke 	348
+	
+Maria 	348
+	
+Marie 	347
+	
+Nanna 	315
+	
+Victoria 	297
+	
+Alberte 	293
+	
+Nicoline 	285
+	
+Isabella 	274
+	
+Louise 	267
+	
+Mille 	252
+	
+Jasmin 	249
+	
+Anne 	241
+	
+Frederikke 	237
+	
+Line 	235
+	
+Frida 	222
+	
+Sofia 	221
+	
+Natasja 	209
+	
+Mia 	197
+	
+Olivia 	191
+	
+Rebecca 	189
+	
+Thea 	188
+	
+Astrid 	179
+	
+Lea 	174
+	
+Sille 	166
+	
+Kristine 	164
+	
+Johanne 	153
+	
+Liva 	143
+	
+Amanda 	136
+	
+Emily 	132
+	
+Liv 	128
+	
+Tilde 	127
+

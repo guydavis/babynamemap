@@ -1,0 +1,70 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div style="margin:10px;font-size:1.3em;line-height:1.3em;">
+<% if @photo %>
+  <div style="float:right;text-align:center;font-size:0.85em">
+    <%=image_tag(@photo.public_filename(:thumb)) %><br/>
+    <%=h(@name.name + ' ' + (@photo.last_name||''))%>
+    <% if @photo.location %> 
+      from <%=h(@photo.location)%>
+    <% end %>
+    </div>
+<% end %>
+  <div style="margin:10px 0px 10px 0px;">
+    <div class='name_detail_label'><%=boy_or_girl(@name.gender).capitalize%>s' Name:</div>
+    <div style='margin-left:25px;'>
+      <%= @name.name %>
+      <%= image_tag ("icons/" + @name.gender.downcase + ".png")%>
+    </div>
+  </div>
+  <div id='rating_div'>
+    <%=render :partial=>'name_rating'%>
+  </div>
+  
+  <div style="margin:10px 0px 10px 0px;">
+    <span class='name_detail_label'>Add to Favorites:&nbsp;&nbsp;</span>
+    <a href='javascript:addFave(<%=@name.id%>,"<%=@name.name%>", "<%=@name.gender.downcase%>")'>
+      <%=image_tag('icons/heart_add.png')%>
+    </a>
+  </div>
+ 
+  <div style="margin:10px 0px 10px 0px;">
+    <div class='name_detail_label'>Link to Map:</div>
+    <div style='font-size:0.8em;margin-left:30px;'>
+    <% if (@name.gender == "MALE") %>
+      <a href="http://www.babynamemap.com/boys/<%=CGI.escape(@name.name)%>">
+     http://www.babynamemap.com/boys/<%=CGI.escape(@name.name)%></a>
+    <% else %> 
+    <a href="http://www.babynamemap.com/girls/<%=CGI.escape(@name.name)%>">
+     http://www.babynamemap.com/girls/<%=CGI.escape(@name.name)%></a>
+    <%  end %>
+    </div>
+    <div style='font-size:0.8em;'>
+      Show your favorite names' popularity from your own web page or blog.
+    </div>
+  </div>
+ 
+  <% if @comment %>
+  <div class='name_detail_label'>Recent Visitor Comment:</div>
+  <div class="commentbox"><%=h(@comment.comment)%></div>
+  <div class="commentfooter">Posted by <%=h(@comment.visitor.name)%>
+    on <%= format_date(@comment.created_at, true) %>
+    <%= image_tag "icons/comment.png" %>         
+  </div> 
+  <% end %>          
+</div>

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Export code leaving out certain stuff to build a tarball for my site
+svn export http://localhost/svn/home/web/baby 
+rm -rf baby/stats
+rm -rf baby/public/sitemap*
+rm -f baby/script/tarball
+rm -f baby/script/sitemap
+rm -f baby/public/google*
+
+tar -cvf code.tar baby
+gzip code.tar
+
+mv code.tar.gz public/
+
+rm -rf baby

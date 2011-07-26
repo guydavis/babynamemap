@@ -1,0 +1,100 @@
+Mathias 	991
+	
+Nikolaj 	939
+	
+Mads 	904
+	
+Emil 	900
+	
+Frederik 	893
+	
+Rasmus 	881
+	
+Mikkel 	875
+	
+Magnus 	868
+	
+Christian 	865
+	
+Oliver 	799
+	
+Tobias 	777
+	
+Victor 	747
+	
+Jonas 	744
+	
+Kasper 	724
+	
+Jacob 	720
+	
+Andreas 	698
+	
+Marcus 	665
+	
+Lucas 	664
+	
+Simon 	632
+	
+Sebastian 	546
+	
+Nicklas 	530
+	
+Christoffer 	484
+	
+Daniel 	477
+	
+Alexander 	453
+	
+Anders 	398
+	
+Benjamin 	362
+	
+Jeppe 	352
+	
+Lasse 	347
+	
+Philip 	326
+	
+Patrick 	319
+	
+Martin 	316
+	
+Oscar 	308
+	
+Gustav 	297
+	
+Thomas 	292
+	
+William 	292
+	
+Peter 	271
+	
+Anton 	250
+	
+Malthe 	227
+	
+Mohammad 	211
+	
+Jonathan 	200
+	
+Carl 	198
+	
+Mark 	181
+	
+Morten 	171
+	
+Søren 	162
+	
+Johan 	161
+	
+August 	139
+	
+David 	139
+	
+Laurits 	137
+	
+Asger 	132
+	
+Jesper 	132
+

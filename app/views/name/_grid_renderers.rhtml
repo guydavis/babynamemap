@@ -1,0 +1,56 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+function renderName(value, cellMeta, record) {
+  return String.format('<a class="name_link" href="javascript:showNameWindow(\'{0}\', {1}, \'details\');">{2}</a>', value.gsub("'", "\\'"), record.data['id'], value);
+}
+
+function renderActions(value, cellMeta, record) {
+  var html = '<a href="javascript:remoteSearch(\''+record.data['name']+'\',\'<%=@gender.downcase%>\')" title="Show Popularity on Map"><%=image_tag("icons/world_go.png", :alt=>"Show Popularity on Map")%></a>';
+  html += ' <a href="javascript:addFave('+value+',\''+record.data['name']+'\',\'<%=@gender.downcase%>\')" title="Add to Favorites"><%=image_tag("icons/heart_add.png", :alt=>"Add to Favorites")%></a>';
+  html += ' <%=link_to image_tag("icons/email_go.png"), "mailto:friend@somewhere.com?subject=Baby Name Map&body=How about ' + record.data['name'] + ' as a name?  I found it at the Baby Name Map (http://www.babynamemap.com)", :title=>"Send to a Friend via Email" %>'
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'photos\');"  title="Upload Photo">', record.data['name'].gsub("'", "\\'"), value);
+  html += "<img src='/images/icons/image_add.png' alt='Photo'/></a>";
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'comments\');"  title="Post Comment">', record.data['name'].gsub("'", "\\'"), value);
+  html += "<img src='/images/icons/comment_add.png' alt='Comment'/></a>";
+  return html;
+}
+
+function renderViews(value, cellMeta, record) {
+  var html = String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'details\');"  title="View Details">', record.data['name'].gsub("'", "\\'"), value);
+  html += "<img src='/images/icons/user_<%=@gender.downcase%>.png' alt='Overview'/></a>";
+  <% if @region %>
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'popularity\', <%=@region.id%>);"  title="Chart Popularity">', record.data['name'].gsub("'", "\\'"), value);
+  <% else %>
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'popularity\');"  title="Chart Popularity">', record.data['name'].gsub("'", "\\'"), value);
+  <% end %>
+  html += "<img src='/images/icons/chart_curve.png' alt='Chart'/></a>";
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'photos\');"  title="View Photos">', record.data['name'].gsub("'", "\\'"), value);
+  html += "<img src='/images/icons/images.png' alt='Photos'/></a>";
+  html += String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'comments\');"  title="View Comments">', record.data['name'].gsub("'", "\\'"), value);
+  html += "<img src='/images/icons/comments.png' alt='Comment'/></a>";
+  return String.format(html);
+}
+ 
+function renderRating(value, cellMeta, record) {
+  if ((value == null) || (value < 1)) {
+    return '';
+  }
+  var html = String.format(' <a href="javascript:showNameWindow(\'{0}\',{1}, \'details\');"  title="View Ratings">', record.data['name'].gsub("'", "\\'"), record.data['id']);
+  html += '<img src="/images/rating/' + Math.round(value) + 'star.gif"/></a>';
+  return html;
+}

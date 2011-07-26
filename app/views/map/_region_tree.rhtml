@@ -1,0 +1,80 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<style type="text/css">
+  img.flagIcon {  height: 11px; width: 16px; margin-top:4px; margin-bottom:3px; }
+</style>
+<script type="text/javascript" language="Javascript">
+var region_tree;
+Ext.onReady(function() {
+  var root = new Ext.tree.TreeNode({
+    id: 'root_node', 
+    text: 'Countries',
+    draggable: false,
+    expanded: true,
+    iconCls: 'flag',
+    icon: '/images/icons/world.png',
+    href: '/',
+    qtip: 'Show All Regions on Map'
+  });
+  var country; <%
+  last_country = nil
+  Region.find(:all, :order=>"country, is_country desc, region").each do |region|
+  if region.country != last_country # Add the country node   
+  -%>country = new Ext.tree.TreeNode({ text: '<%=region.country%>', draggable: false, iconCls: 'flag',<% 
+    if region.is_country 
+      if remote_search
+  -%>href: 'javascript:zoomToRegion(<%=region.lat%>,<%=region.lng%>,<%=region.id%>, 5)',<%  
+      else 
+  -%>href: '/map/region/' + '<%=region.id%>',<% 
+      end 
+    else 
+   -%>singleClickExpand: true,<% 
+    end 
+   -%>icon: '/images/icons/flags/<%=region.country_code.downcase%>.png'}); root.appendChild(country); 
+  <% last_country = region.country  
+  end
+  if not region.is_country 
+  -%>
+  country.appendChild(new Ext.tree.TreeNode({text: '<%=region.region%>',draggable:false,<% 
+    if region.has_icon 
+  -%>icon: '/images/icons/flags/<%=region.country_code.downcase%>.<%=region.region_code.downcase%>.png',iconCls: 'flag',<% 
+    else 
+  -%>iconCls: 'noFlag',<% 
+    end 
+    if remote_search 
+  -%>href: 'javascript:zoomToRegion(<%=region.lat%>,<%=region.lng%>,<%=region.id%>, 5)'<% 
+    else 
+  -%>href: '/map/region/' + '<%=region.id%>'<% 
+    end %>}));
+  <%
+  end 
+  end -%>
+  region_tree = new Ext.tree.TreePanel({
+    el:'regions_tree',
+    autoScroll:true,
+    animate: true,
+    enableDD: false,
+    containerScroll: true,
+    root: root,
+    height: 290,
+    width: 140
+  });
+  region_tree.render();
+})
+</script>
+<div id="regions_tree" style="margin-top:5px;text-align:left;"></div>

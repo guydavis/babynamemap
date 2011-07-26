@@ -1,0 +1,38 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div id='compare_graph'>
+<img width="484" height="350" src="/name/compare_graph?boys=<%=@boys-%>&girls=<%=@girls-%>&region_id=<%=@initial_region.id%>"/>
+</div>
+<div id='compare_form'>
+  Boys' Names: <input id='boys' style='background-color: rgb(255, 255, 160);width:360px' 
+   type='text' name='boys' value='<%=@boys%>'/> <%=link_to image_tag("icons/cross.png", 
+   :alt=>"Clear Boys' Names"), "javascript:clearInput('boys')", :title=>"Clear Boys' Names"%><br />
+  Girls' Names: <input id='girls' style='background-color: rgb(255, 255, 160);width:360px;margin-left:5px;' 
+   type='text' name='girls' value='<%=@girls%>'/> <%=link_to image_tag("icons/cross.png",      
+   :alt=>"Clear Girls' Names"), "javascript:clearInput('girls')", :title=>"Clear Girls' Names"%><br />
+  View popularity in region: 
+  <select name='region_id' id='region_select' style="background-color: rgb(255, 255, 160);">
+  <%= option_groups_from_collection_for_select(@countries, :regions, :name, :id, :region, @initial_region.id)%>
+  </select>
+  &nbsp;
+  <button type='button' style="font-size:.8em;line-height:.8em" 
+     onclick='updateCompareGraph(Form.serialize("compare_form"));'>
+     <%= image_tag("icons/chart_curve.png")%> Graph Names
+  </button>
+</div>
+

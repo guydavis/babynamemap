@@ -1,0 +1,101 @@
+ALEJANDRO                      	7,173
+DANIEL                         	6,459
+PABLO                          	6,254
+DAVID                          	5,992
+ADRIAN                         	4,822
+JAVIER                         	4,601
+ALVARO                         	4,374
+SERGIO                         	3,659
+CARLOS                         	3,229
+MARCOS                         	3,149
+IVAN                           	3,131
+HUGO                           	3,054
+DIEGO                          	2,896
+JORGE                          	2,824
+MIGUEL                         	2,785
+MANUEL                         	2,685
+MARIO                          	2,553
+RAUL                           	2,412
+ANTONIO                        	2,312
+RUBEN                          	2,243
+VICTOR                         	2,116
+MARC                           	2,043
+JUAN                           	1,992
+IKER                           	1,972
+SAMUEL                         	1,896
+ALEX                           	1,873
+ALBERTO                        	1,802
+JESUS                          	1,736
+ANGEL                          	1,726
+NICOLAS                        	1,626
+FRANCISCO                      	1,586
+OSCAR                          	1,577
+JAIME                          	1,572
+HECTOR                         	1,564
+JOSE                           	1,562
+PAU                            	1,424
+ISMAEL                         	1,344
+GUILLERMO                      	1,275
+PEDRO                          	1,271
+JOEL                           	1,246
+IGNACIO                        	1,232
+LUIS                           	1,227
+MIGUEL ANGEL                   	1,220
+GONZALO                        	1,205
+IZAN                           	1,199
+RAFAEL                         	1,184
+GABRIEL                        	1,172
+AARON                          	1,077
+ANDRES                         	1,030
+FERNANDO                       	1,019
+FRANCISCO JAVIER               	1,015
+LUCAS                          	1,010
+JOSE ANTONIO                   	989
+CRISTIAN                       	982
+POL                            	981
+RODRIGO                        	974
+JOSE MANUEL                    	929
+AITOR                          	884
+JOAN                           	879
+SANTIAGO                       	839
+MARTIN                         	819
+EDUARDO                        	815
+ERIC                           	802
+ARNAU                          	797
+ROBERTO                        	796
+UNAI                           	779
+ENRIQUE                        	753
+JORDI                          	720
+ASIER                          	701
+ADRIA                          	660
+MOHAMED                        	644
+JOSE LUIS                      	635
+JUAN JOSE                      	635
+JOSE MARIA                     	612
+MARCO                          	612
+SERGI                          	612
+GERARD                         	588
+JAN                            	560
+JUAN MANUEL                    	546
+ORIOL                          	541
+KEVIN                          	540
+CHRISTIAN                      	521
+YERAY                          	516
+JUAN CARLOS                    	510
+JUAN ANTONIO                   	507
+MARTI                          	487
+MATEO                          	487
+DARIO                          	479
+XAVIER                         	471
+GUILLEM                        	465
+ISAAC                          	456
+JOAQUIN                        	452
+ALEIX                          	448
+ANDER                          	431
+BRUNO                          	429
+ADAM                           	427
+JON                            	419
+MIKEL                          	415
+FRANCISCO JOSE                 	413
+AIMAR                          	402
+

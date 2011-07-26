@@ -1,0 +1,32 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+<div style='margin:10px;font-size:1.2em;line-height:1.1em;'>
+  
+<p style='margin-bottom:10px;'><%= image_tag("globe.jpg", :style=>"float:left")%>Hi, my name is <%= link_to("Guy Davis", "http://www.guydavis.ca", :target=>'blank')%> and I built the Baby Name Map.  You're probably wondering why, so here's the story...</p>
+
+<p style='margin-bottom:10px;'>As a father-to-be, I went looking for help on baby naming. While there were lots of sites that provide lists of names, none of them did a good job of showing the popularity of names around the world.</p>  
+
+<p style='margin-bottom:10px;'>I was looking for a name for my first child which was not too popular and also not too rare.  In the case of common names, I didn't want my child to be one of the many children named Jacob or Emily in their Grade 1 class.  On the other hand, I didn't want them to be teased for having a really rare name like <%=link_to "Moon Unit", "http://en.wikipedia.org/wiki/Moon_Zappa", :target=>"blank"%> or <%=link_to "Pilot Inspektor", "http://en.wikipedia.org/wiki/Jason_Lee_%28entertainer%29#Personal_life", :target=>"blank"%>.</p>
+
+<p style='margin-bottom:10px;'>The Baby Name Map currently has over 100,000 unique 
+names from <%=Region.count_by_sql "SELECT count(distinct(country_code)) FROM regions"%>
+different countries. I hope you find the site as useful as my wife, Alison, and 
+I have in our search for the perfect baby name. <b>Update</b>: My son <%=link_to "Gavin", "http://blog.babynamemap.com/2008/03/my-favorite-baby-name-gavin.html", :target=>"blank"%> was born in March, 2008!</p>
+
+<p style='margin-bottom:10px;'>Please enjoy this free service without advertisements, donation requests or registration forms. For the latest news about the map, please see the <%=link_to "blog", "http://babynamemap.blogspot.com", :target=>"blank"%>.</p>
+
+</div>

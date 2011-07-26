@@ -1,0 +1,39 @@
+<%=
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  html = "<div id='infobox' style='height:172px'><table border='1' cellspacing='0' cellpadding='0'><caption>"
+  html += region.full_name
+  html +=  "  (%d)" % region.current_year
+  html += "</caption><tr><th width='15%'>Rank</th><th width='58%'>Name</th><th width='17%'>Count</th><th width='10%'>&nbsp;<th></tr>" 
+  for n in region.top_names(gender)
+    html += "<tr><td>%d</td><td>" % n.rank
+    html += link_to h(n.name), "javascript:showNameWindow('" + escape_javascript(n.name) \
+       + "', " + n.id.to_s + ", 'popularity', " + region.id.to_s + ")"
+    html += "</td><td>" + (n.count||"").to_s + "</td><td>"
+    html += link_to image_tag("icons/heart_add.png", :alt=>"Add to Favorites"), "javascript:addFave(" + n.id.to_s + ",'" + escape_javascript(n.name) + "','" + n.gender.downcase + "')", :title=>"Add to Favorites" 
+    html += "</td></tr>" 
+  end
+  html += "</table>"
+  if region.stats_url
+    html += "<span style='float:left;margin-top:4px;'>"
+    html += link_to image_tag("icons/book.png", :alt=>'View Stats Source'), region.stats_url, :target=>'_blank', :title=>'View Stats Source'
+    html += "</span>"
+  end
+  html += "<span style='float:right;margin-top:8px;'>"
+  html += link_to("View the rest of the " + boy_or_girl(gender).downcase + "s' names...", {:controller=>'region', :action=>'popular', :gender=>gender.downcase, :region_id=>region.id})
+  html += "</span></div>"  
+  escape_javascript(html)
+-%>

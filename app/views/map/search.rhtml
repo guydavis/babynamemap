@@ -1,0 +1,84 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <% 
+     title = 'Baby Name Map - Popular baby name for a '
+     if not @name
+       title = 'Baby Name Map - No such name found...'
+     elsif @name.gender == 'MALE'
+       title = title + "boy" + ": " + @name.name
+     elsif 
+       title = title + "girl" + ": " + @name.name
+     end
+  %>
+
+  <%= render :partial => "layouts/header", :locals => { 
+      :title => title } %>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%=@api_key%>"
+    type="text/javascript"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+  var map;
+  var markers = new Array();  
+  function load() {
+    if (GBrowserIsCompatible()) {
+      map = new GMap2(document.getElementById("map"));
+      map.addControl(new GLargeMapControl());
+      map.addControl(new GMapTypeControl());
+      map.addControl(new GOverviewMapControl());
+      map.addMapType(G_PHYSICAL_MAP);
+      point = new GLatLng(<%=@lat%>,<%=@lng%>);
+      map.setCenter(point, 3);
+<% if @regions.size > 0  %>
+      showResultsMiniWindow('<%=escape_javascript(@name.name)%>',<%=@name.id%>, '<%=@name.gender.downcase%>');
+      var baseIcon = new GIcon();
+      baseIcon.shadow = "/images/map_pins/msmarker.shadow.png";
+      baseIcon.iconSize = new GSize(32, 32);
+      baseIcon.shadowSize = new GSize(59, 32);
+      baseIcon.iconAnchor = new GPoint(9, 34);
+      baseIcon.infoWindowAnchor = new GPoint(9, 2);
+      baseIcon.infoShadowAnchor = new GPoint(18, 25);
+      var bounds = new GLatLngBounds();
+      <% for r in @regions -%>
+      bounds.extend(addSearchMarker(<%=r.id%>,new GLatLng(<%=r.lat-%>, <%=r.lng-%>), new GIcon(baseIcon, '<%=map_icon_path(r.popularity)%>'), '<%=marker_title_with_pop(r, r.popularity)%>', "<%= render :partial => "name_search", :locals => { :r => r } -%>"));
+      <% end %>
+      <% if @nearest_region %>
+      zoomToRegion(<%=@nearest_region.lat%>,<%=@nearest_region.lng%>,<%=@nearest_region.id%>,map.getBoundsZoomLevel(bounds));
+      <% else %>
+      map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+      <% end %>
+<% elsif @name %>
+     showNameWindow('<%escape_javascript(@name.name)%>', <%=@name.id%>, 'popularity');
+<% else  %>
+     showErrorMessage("No Results Found", "Wow!  That's a unique name.  It was not found in any regions' list of popular names.  Please try another search.");
+<% end %>
+    }
+  }
+  //]]>
+  </script>
+</head>
+<body onload="load()" onunload="GUnload()">
+  <%= render :partial => "layouts/top", :locals => { 
+    :subtitle => "Discover the popularity of baby names all around the world." } %>
+  <%= render :partial => "layouts/left", :locals => { :remote_search => true }%>
+  <div id="map"></div>
+  <%= render :partial => "layouts/right", :locals => { :remote_search => true }%>
+  <%= render :partial => "layouts/bottom", :locals => { :div_id => "map_bottom"} %> 
+</body>
+</html>

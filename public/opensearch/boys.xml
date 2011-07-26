@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+     <ShortName>Popular Boys' Names</ShortName>
+     <Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8%2F9hAAAABGdBTUEAAK%2FINwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIHSURBVDjLpVNNaxNRFH0fgzNxRlNIm6QVsSRQ1IUiVCSCS8FF4kokO%2F9BF7oUstBll4IuunBpl61RNy4suhgF21WhJVU0WiHUksmQr2bex%2FTeMJEoxog%2BuMzjzT3nnXPmDg3DkPzPMsY1PHrpdaWUZFBCDJ6C3L91NjaWAAH5SwkLhaJaTfBJyOOnmwf4no0lkIJUqg2hAKUAqKMKQMFfEdy5PhN7X%2FGe1L22QqACCUFPhCIIvv6UwdJaiyopi1KqAnjMRZ5dUDBzbta5fDxuc99vafuYw9SQgj7B0qsmBeDdTJKXUhMWi5mcaRKSVrt30uCcHrFMtrv7Xb5wq8%2Buzp%2FIp1MJLoYJ4KZiZsoozU5bBqWM9r8slO0c5bjvdrr6uVt9B6CF1dcfrgm5JVHhDwJIuoA3QyS0tteUGzueEtBwIRvnyXTC6HR76PnLw9tX0HdsOCMWJZ0zLZANt63v1NV%2BozO377Xn3M2a0hCabdsMPOdGDhL60dFASthjQHgmOOufK%2FAz8PzrYhGB22wdaGw%2Bn5ngjkkrjsUqF88kOZ75dV9jz2gFgSh%2F%2BubfOJ012VR60sinJg0UhGApgnDrYw0IZHkkAUheXt%2Fey%2FaCoHRqOs4cx%2B7n4TcaehvAbzY%2B34PUl39HQAd%2F48KDtxT8FyH9ghQyhyOMgwRVRvDK4s3wjwT%2Fug4BPyZOkZTlSM0AAAAASUVORK5CYII%3D</Image>
+     <InputEncoding>UTF-8</InputEncoding>
+     <Url type="text/html" template="http://www.babynamemap.com/boys/{searchTerms}"/>
+     <Url type="application/x-suggestions+json" template="http://www.babynamemap.com/name/opensearch_complete/boys/{searchTerms}"/>
+</OpenSearchDescription>

@@ -1,0 +1,41 @@
+<%
+#    Copyright 2007 Guy Davis (davis@guydavis.ca)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+<p>
+Your Name: <span style="color: gray;font-size:.85em;">(Required)</span><br>
+<input style="background-color: rgb(255, 255, 160);width:300px;" name="name" value="<%=@visitor.name%>" size="50" type="text">
+</p>
+
+<p>
+Your Comment: <span style="color: gray;">(Required)</span><br>
+<textarea style="background-color: rgb(255, 255, 160);" name="comment" rows='8' cols='60'></textarea>
+</p>
+
+<div id='captcha_div'>
+  <%= render(:partial => "captcha") %>
+</div>
+
+<p style='text-align:center'>
+  <%=link_to_remote image_tag("post_comment.gif", :alt=>"Post Comment"),
+    :url => { :controller => "name", :action => "add_comment", :id => @name.id },
+    :loading => "$('submit_indicator').show()",
+    :complete => "$('submit_indicator').hide()",
+    :success => "eval(request.responseText)",
+    :failure => "showXhrFailure(request)",
+    :submit => "comment_form" %>
+  <%= image_tag "indicator.gif", :id=>'submit_indicator', :style=>"display:none" %>  
+

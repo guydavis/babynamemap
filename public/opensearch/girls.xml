@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+     <ShortName>Popular Girls' Names</ShortName>
+     <Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8%2F9hAAAABGdBTUEAAK%2FINwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHgSURBVDjLjZLNbtNAFIXrJ8mL%2BQVQoVUWICFEFZCAbrJCAdpFWCC1i1QgVLEoZYFAgrY0rhPHTmwnThP%2FBKetU9vxT7I5zHWEhEBuWBxpFnO%2Bc%2B6dWQGw8qfUisQNdnR%2BtD%2BojQ9txz2wHPvdea1f7fDtssj9ff8fs7VnlCbCJRIzwsxNMfuZIuoGuPriwtjqlOSndS4XQMlkJuPcm2F%2ByXSxUGrHcD9YUDcbfC6AalMyGaNuiIvDEdx9C0FjwqAJfMGD%2FqRZywXQvFk6SxwfOOhvdwpGRSnYb%2FpslASxMYX6UHRuaDB0aGYCuO9N9J4rhW65VTC39AWgN0XnnpAPMHeN2lT1F3XrHqzXBsxXOq4%2Bu0idGN7XMeTiaf4IvRcKP%2F5oIxlEWSKJjCTayeClhubaUf4SlWcCp5el0ujtEGHrOtt8asUIxQmGzCzdOS6JxW%2F5z5hBHguc9qjJdzekfqQGSM4jdFaFsHX7hG%2Bsf7%2F5I5HaG2dV7UFD0%2B6K2lTxs8W1b536yuoPTVo72lwKUO%2BLc6pP5nQYZ%2FuIeyGCMw%2BshbYUoBTrGYBE9UmhdI1A9CD%2FD0BaP6nKrC6rrZGRRGc5G%2BH401LAb5HBZ7WpOp3z7uUC2HtXqDKJJe%2Fk3fsF8TkmWq5zP6gAAAAASUVORK5CYII%3D</Image>
+     <InputEncoding>UTF-8</InputEncoding>
+     <Url type="text/html" template="http://www.babynamemap.com/girls/{searchTerms}"/>
+     <Url type="application/x-suggestions+json" template="http://www.babynamemap.com/name/opensearch_complete/girls/{searchTerms}"/>
+</OpenSearchDescription>
